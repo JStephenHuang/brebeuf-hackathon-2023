@@ -5,7 +5,11 @@ export const useFilterBooks = (selectedGenres: string[]) => {
 
   let key: keyof typeof listOfBooks;
 
-  const filteredBooks = [];
+  const filteredBooks: Array<{
+    book_title: string;
+    book_image: string;
+    book_link: string;
+  }> = [];
   for (const genre of selectedGenres) {
     for (key in listOfBooks) {
       if (listOfBooks[key].genres.includes(genre)) {

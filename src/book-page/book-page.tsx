@@ -58,7 +58,7 @@ const BookPage = () => {
       </div>
       <h1 className="font-bold text-[24px] mt-3 mb-5">Vos livres:</h1>
       <div className="grid grid-cols-4 gap-5 w-[80%]">
-        {filteredBooks.map((book: any, key: number) => (
+        {filteredBooks.map((book, key: number) => (
           <BookCard
             key={key}
             img={book.book_image}

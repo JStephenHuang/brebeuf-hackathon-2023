@@ -14,7 +14,7 @@
       "book_title": "All-of-a-Kind Family",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb17726465",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/0440400597/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "2": {
       "book_title": "Alvin Ho: Allergic to Girls, School, and Other Scary Things",
@@ -675,7 +675,7 @@
       "book_title": "George and Martha",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb17713899",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/0395166195/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "45": {
       "book_title": "Ghost",
@@ -718,7 +718,7 @@
       "book_title": "Go Away, Big Green Monster!",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb17896738",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/0316236535/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "48": {
       "book_title": "Goodnight Moon",
@@ -915,7 +915,7 @@
       "book_title": "It Ain't So Awful Falafel",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb20911397",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/9780544612310/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "60": {
       "book_title": "It Could Always Be Worse",
@@ -1525,7 +1525,7 @@
       "book_title": "Smile",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb21725115",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/9780545132053/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "99": {
       "book_title": "The Snowy Day",
@@ -1809,7 +1809,7 @@
       "book_title": "The War That Saved My Life",
       "book_link": "https://browse.nypl.org/iii/encore/record/C__Rb20472490",
       "book_image": "https://contentcafecloud.baker-taylor.com/Jacket.svc/D65D0665-050A-487B-9908-16E6D8FF5C3E/9780803740815/Medium/Empty",
-      "genres": []
+      "genres": ["None"]
     },
     "114": {
       "book_title": "The Watsons go to Birmingham--1963",
