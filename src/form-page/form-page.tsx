@@ -21,7 +21,7 @@ const Genre = ({ genre, onCheckChange }: GenreProps) => {
       onClick={onClick}
       className={
         checked
-          ? "bg-black text-white rounded-full flex items-center border border-black  py-2 px-4 mx-1 mb-2"
+          ? "bg-black text-white rounded-full flex items-center border border-black py-2 px-4 mx-1 mb-2"
           : "rounded-full flex items-center border border-black  py-2 px-4 mx-1 mb-2"
       }
     >
