@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoArrowBackCircle } from "react-icons/io5";
-import { motion } from "framer-motion";
+import { FlatTree, motion } from "framer-motion";
 import { genres } from "../doc/genres";
 
 interface GenreProps {
@@ -9,19 +9,24 @@ interface GenreProps {
   onCheckChange: (genre: string) => void;
 }
 const Genre = ({ genre, onCheckChange }: GenreProps) => {
+  const [checked, setChecked] = useState<boolean>(false);
+
+  const onClick = () => {
+    onCheckChange(genre);
+    setChecked(!checked);
+  };
+
   return (
-    <label
-      htmlFor={`${genre}-checkbox`}
-      className="rounded-lg flex items-center w-full p-6 border border-black mb-5"
+    <button
+      onClick={onClick}
+      className={
+        checked
+          ? "bg-black text-white rounded-full flex items-center border border-black  py-2 px-4 mx-1 mb-2"
+          : "rounded-full flex items-center border border-black  py-2 px-4 mx-1 mb-2"
+      }
     >
-      <input
-        className="appearance-none border-black border bg-gray-100 w-5 h-5 checked:bg-black rounded"
-        id={`${genre}-checkbox`}
-        type="checkbox"
-        onChange={() => onCheckChange(genre)}
-      />
-      <p className="text-[20px] font-extrabold ml-2">{genre}</p>
-    </label>
+      <p className="font-extrabold ml-2">{genre}</p>
+    </button>
   );
 };
 
@@ -68,7 +73,7 @@ const FormPage = () => {
       <h2 className="text-[20px]">
         Parmi les genres en-dessous, selectionnez vos preferes.
       </h2>
-      <div className="w-[50%] h-[70%] overflow-hidden overflow-y-auto flex flex-col items-center p-5 rounded mt-5">
+      <div className="w-[50%] h-[70%] overflow-hidden overflow-y-auto flex items-center p-5 rounded mt-5 flex-wrap">
         {genres.map((genre: string, key: number) => (
           <Genre key={key} genre={genre} onCheckChange={onCheckChange} />
         ))}

@@ -1,17 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useAPIClient } from "../hooks/api-client";
-import { useEffect } from "react";
 
 const MainPage = () => {
-  const client = useAPIClient();
-
-  useEffect(() => {
-    client
-      .get("https://dog.ceo/api/breeds/image/random")
-      .then((value) => console.log(value));
-  }, []);
-
   return (
     <motion.div
       className="w-screen h-[90%]"
@@ -30,13 +20,13 @@ const MainPage = () => {
             suggestions de nos meilleurs livres.
           </p>
           <Link
-            className="py-3 px-7 bg-blue-600 text-white font-bold hover:bg-blue-700 rounded-lg text-[20px]"
+            className="py-3 px-7 bg-black text-white font-bold hover:opacity-60 rounded-lg text-[20px]"
             to="/form"
           >
             Commencez a répondre
           </Link>
         </div>
-        <div className="h-[80%] w-1/2 bg-black rounded-l-lg"></div>
+        <div className="h-[80%] w-1/2 bg-black rounded-l-lg bg-[url('https://i.pinimg.com/564x/87/92/8a/87928af9d10872e36f5f16f530484bc9.jpg')] bg-cover bg-center"></div>
       </div>
     </motion.div>
   );

@@ -2,22 +2,24 @@ import { Link, useLocation } from "react-router-dom";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { motion } from "framer-motion";
 
+import { useFilterBooks } from "../hooks/filter-books";
+
 interface BookCardProps {
   img: string;
   title: string;
-  author: string;
-  publisher: string;
+  link: string;
 }
 
-const BookCard = ({ img, title, author, publisher }: BookCardProps) => {
+const BookCard = ({ img, title, link }: BookCardProps) => {
+  console.log(img);
   return (
     <div className="flex flex-col">
-      <div className="bg-black h-[20rem] mb-2" />
+      <img src={img} className="bg-black h-[25rem] mb-2 rounded-md" />
       <div className="flex flex-col items-center">
-        <h1 className="font-bold text-[24px]">{title}</h1>
-        <h2 className="font-light text-[12px] text-center">
-          {author}, {publisher}
-        </h2>
+        <h1 className="font-bold text-[24px] text-center">{title}</h1>
+        <a href={link} className="font-light hover:underline">
+          Visit
+        </a>
       </div>
     </div>
   );
@@ -27,6 +29,7 @@ const BookPage = () => {
   const { state } = useLocation();
   const { genres } = state;
 
+  const filteredBooks = useFilterBooks(genres);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -55,12 +58,14 @@ const BookPage = () => {
       </div>
       <h1 className="font-bold text-[24px] mt-3 mb-5">Vos livres:</h1>
       <div className="grid grid-cols-4 gap-5 w-[80%]">
-        <BookCard
-          img=""
-          title="Art of war"
-          author="Sun Tzu, Andrew Wilson"
-          publisher="Simon & Schuster."
-        />
+        {filteredBooks.map((book: any, key: number) => (
+          <BookCard
+            key={key}
+            img={book.book_image}
+            title={book.book_title}
+            link={book.book_link}
+          />
+        ))}
       </div>
     </motion.div>
   );

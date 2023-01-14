@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "start": "vite start",
+    "export": "yarn run build && vite export -o _static",
     "preview": "vite pryeview"
   },
   "dependencies": {
@@ -13,6 +15,7 @@
     "autoprefixer": "^10.4.13",
     "axios": "^1.2.2",
     "framer-motion": "^8.4.3",
+    "fs": "^0.0.1-security",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
