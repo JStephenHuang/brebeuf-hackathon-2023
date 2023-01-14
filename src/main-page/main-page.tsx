@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Navbar from "../components/navbar";
+import { useAPIClient } from "../hooks/api-client";
+import { useEffect } from "react";
 
 const MainPage = () => {
+  const client = useAPIClient();
+
+  useEffect(() => {
+    client
+      .get("https://dog.ceo/api/breeds/image/random")
+      .then((value) => console.log(value));
+  }, []);
+
   return (
     <motion.div
       className="w-screen h-[90%]"
@@ -21,7 +30,7 @@ const MainPage = () => {
             suggestions de nos meilleurs livres.
           </p>
           <Link
-            className="px-6 py-3 bg-blue-600 text-white font-bold hover:bg-blue-700 rounded-lg text-[20px]"
+            className="py-3 px-7 bg-blue-600 text-white font-bold hover:bg-blue-700 rounded-lg text-[20px]"
             to="/form"
           >
             Commencez a répondre

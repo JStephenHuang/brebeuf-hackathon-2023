@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { genres } from "../doc/genres";
+import { Link, useNavigate } from "react-router-dom";
+import { IoArrowBackCircle } from "react-icons/io5";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { genres } from "../doc/genres";
 
 interface GenreProps {
   genre: string;
@@ -14,7 +15,7 @@ const Genre = ({ genre, onCheckChange }: GenreProps) => {
       className="rounded-lg flex items-center w-full p-6 border border-black mb-5"
     >
       <input
-        className="appearance-none border-black border bg-gray-100 w-5 h-5 checked:bg-blue-500 rounded"
+        className="appearance-none border-black border bg-gray-100 w-5 h-5 checked:bg-black rounded"
         id={`${genre}-checkbox`}
         type="checkbox"
         onChange={() => onCheckChange(genre)}
@@ -31,7 +32,6 @@ const FormPage = () => {
   const [checkedGenres, setCheckedGenres] = useState<string[]>([]);
 
   const onCheckChange = (genre: string) => {
-    console.log(genre);
     const genreIndex = checkedGenres.indexOf(genre);
     const newCheckedGenres = [...checkedGenres];
     if (genreIndex === -1) {
@@ -58,26 +58,34 @@ const FormPage = () => {
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
       transition={{ delay: 0.2 }}
     >
+      <Link className="absolute left-[5%] flex items-center group" to="/">
+        <IoArrowBackCircle size={24} />
+        <p className="text-[20px] font-semibold ml-3 transition-all group-hover:ml-1">
+          Retournez
+        </p>
+      </Link>
       <h1 className="font-bold text-[24px]">Pour trouver vos livres...</h1>
       <h2 className="text-[20px]">
         Parmi les genres en-dessous, selectionnez vos preferes.
       </h2>
-      <div className="w-[50%] h-[80%] overflow-hidden overflow-y-auto flex flex-col items-center p-5 rounded mt-5">
+      <div className="w-[50%] h-[70%] overflow-hidden overflow-y-auto flex flex-col items-center p-5 rounded mt-5">
         {genres.map((genre: string, key: number) => (
           <Genre key={key} genre={genre} onCheckChange={onCheckChange} />
         ))}
-        {error ? (
-          <h1 className="text-red-500 mb-5 font-bold">
-            Vous devez au moins en selectionnez un genre
-          </h1>
-        ) : null}
-        <button
-          className="rounded-lg px-5 py-2 text-[20px] bg-blue-600 text-white font-bold hover:bg-blue-700"
-          onClick={onSumbit}
-        >
-          Soumettre
-        </button>
       </div>
+      {error ? (
+        <h1 className="text-red-500 font-bold mt-5">
+          Vous devez au moins en selectionnez un genre
+        </h1>
+      ) : (
+        <h1 className="mt-5"></h1>
+      )}
+      <button
+        className="rounded-lg px-5 py-2 text-[20px] bg-black text-white font-bold hover:opacity-60 mt-5"
+        onClick={onSumbit}
+      >
+        Soumettre
+      </button>
     </motion.div>
   );
 };

@@ -28,7 +28,13 @@ const BookPage = () => {
   const { genres } = state;
 
   return (
-    <motion.div className="w-full h-[90%] flex flex-col items-center p-5">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      transition={{ delay: 0.2 }}
+      className="w-full h-[90%] flex flex-col items-center p-5"
+    >
       <Link className="absolute left-[5%] flex items-center group" to="/form">
         <IoArrowBackCircle size={24} />
         <p className="text-[20px] font-semibold ml-3 transition-all group-hover:ml-1">
@@ -39,7 +45,10 @@ const BookPage = () => {
 
       <div className="w-[60%] flex justify-center flex-wrap">
         {genres.map((genre: string, key: number) => (
-          <div className="rounded-full text-white bg-black py-2 px-4 font-bold mx-1 mb-2">
+          <div
+            key={key}
+            className="rounded-full text-white bg-black py-2 px-4 font-bold mx-1 mb-2"
+          >
             {genre}
           </div>
         ))}
