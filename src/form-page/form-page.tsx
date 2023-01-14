@@ -66,14 +66,14 @@ const FormPage = () => {
       <Link className="absolute left-[5%] flex items-center group" to="/">
         <IoArrowBackCircle size={24} />
         <p className="text-[20px] font-semibold ml-3 transition-all group-hover:ml-1">
-          Retournez
+          Retourner
         </p>
       </Link>
       <h1 className="font-bold text-[24px]">Pour trouver vos livres...</h1>
       <h2 className="text-[20px]">
-        Parmi les genres en-dessous, selectionnez vos preferes.
+        Parmi les genres en-dessous, selectionnez vos préférés.
       </h2>
-      <div className="w-[50%] h-[70%] overflow-hidden overflow-y-auto flex items-center p-5 rounded mt-5 flex-wrap">
+      <div className="w-[60%] h-[70%] overflow-hidden overflow-y-auto flex items-center p-5 rounded mt-5 flex-wrap">
         {genres.map((genre: string, key: number) => (
           <Genre key={key} genre={genre} onCheckChange={onCheckChange} />
         ))}

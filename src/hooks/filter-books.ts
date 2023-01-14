@@ -12,7 +12,10 @@ export const useFilterBooks = (selectedGenres: string[]) => {
   }> = [];
   for (const genre of selectedGenres) {
     for (key in listOfBooks) {
-      if (listOfBooks[key].genres.includes(genre)) {
+      if (
+        listOfBooks[key].genres.includes(genre) &&
+        filteredBooks.indexOf(listOfBooks[key]) === -1
+      ) {
         filteredBooks.push(listOfBooks[key]);
       }
     }
